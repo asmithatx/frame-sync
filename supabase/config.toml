@@ -1,0 +1,25 @@
+# Minimal local config. `supabase init` generates the full file; these are the
+# bits frame-sync relies on. Merge rather than replace if you already have one.
+project_id = "frame-sync"
+
+[db]
+port = 54322
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[realtime]
+enabled = true
+
+[storage]
+enabled = true
+file_size_limit = "25MiB"
+
+[auth]
+enable_signup = false          # frames and owner are created by seed / admin API only
+jwt_expiry = 3600
+
+[functions.ingest]
+verify_jwt = false             # we check our own upload token; see index.ts

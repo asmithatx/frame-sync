@@ -1,0 +1,8 @@
+.env
+.venv/
+state/
+frames/
+__pycache__/
+
+# interview prep stays local
+docs/*-prep.md

@@ -1,0 +1,15 @@
+[Unit]
+Description=frame-sync agent (Dynaframe cloud sync)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/frame-sync
+EnvironmentFile=/etc/frame-sync.env
+ExecStart=/home/pi/frame-sync/.venv/bin/python -m agent.main
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,6 @@
+# core agent: stdlib only
+# mongo track
+pymongo[srv]>=4.8
+boto3>=1.34        # only if using S3_* presigning
+# supabase track
+supabase>=2.10     # pulls realtime, storage3, gotrue, postgrest
